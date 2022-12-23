@@ -21,12 +21,4 @@ As a user, I want to be able to:
 
 ## Wireframes
 
-![](pictures/Screenshot-1.png)
-
-![](pictures/Screenshot-2.png)
-
-![](pictures/Screenshot-3.png)
-
-![](pictures/Screenshot-4.png)
-
-![](pictures/Screenshot-5.png)
+![](pictures/screenshot-one.png)
