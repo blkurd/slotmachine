@@ -1,0 +1,33 @@
+h1 {
+  text-align: center;
+  margin-top: 150px;
+}
+
+body {
+  background-color: rgb(205, 205, 200);
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.doors {
+  display: flex;
+}
+
+.door {
+  background: #ffffff;
+  width: 200px;
+  height: 210px;
+  border-radius: 40px;
+  border-style: double;
+  margin: 10px;
+}
+
+.btn{
+    margin-top: 30px;
+}
