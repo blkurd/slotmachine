@@ -1,33 +1,33 @@
-h1 {
-  text-align: center;
-  margin-top: 150px;
-}
-
-body {
-  background-color: rgb(205, 205, 200);
-}
-
-#app {
-  width: 100%;
-  height: 100%;
+main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-.doors {
-  display: flex;
+h1 {
+  margin-top: 150px;
 }
 
-.door {
-  background: #ffffff;
-  width: 200px;
-  height: 210px;
-  border-radius: 40px;
-  border-style: double;
-  margin: 10px;
+.potOfGold {
+  margin: auto;
+  float: left;
+  border-style: solid;
+  height: 100px;
+  background: white;
+  width: 100px;
+  margin: 15px;
+  border-radius: 30px;
+  align-items: center;
+  padding: 10px 10px 20px 40px;
+  color: rgb(239, 6, 6);
+  font-size: 100px;
+  border-width: 10px;
 }
 
-.btn{
-    margin-top: 30px;
+button {
+ margin-top: 50px;
+  font-style: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
