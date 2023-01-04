@@ -46,7 +46,6 @@ function playSlot(e) {
       
   render();
 }
-
 //init function should be called when the page loads
 // or when we want to reset the game
 
