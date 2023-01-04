@@ -6,6 +6,8 @@ let box;
 
 // Cache Elements, gotPotsEls is my object and potOfGold1/2/3 are my keys
 // These are the elements that will update on my HTML
+const play = document.getElementById("start");
+const init = document.getElementById("init");
 const boxesEls = {
   box1: document.querySelector("#box1"),
   box2: document.querySelector("#box2"),
@@ -31,33 +33,26 @@ restartButton.addEventListener("click", init);
 // function that will allow the game to play and decide what message
 // will show if someone wins/loses
 
+
 function playSlot(e) {
   box.box1 = getRandomItems();
   box.box2 = getRandomItems();
   box.box3 = getRandomItems();
 
-  if (
-    box.box1 === box.box2 &&
-    box.box3 === box.box1 &&
-    box.box2 === box.box3
+  if (box.box1 === box.box2 && box.box3 === box.box1 && box.box2 === box.box3) {
+    render();
+  }
+  //init function should be called when the page loads
+  // or when we want to reset the game
 
-  ) { 
+  init(); // this will set the initial when the page loads
+  function init() {
+    box = {
+      box1: "❓",
+      box2: "❓",
+      box3: "❓",
+    };
 
-      
-  render();
-}
-//init function should be called when the page loads
-// or when we want to reset the game
-
-init(); // this will set the initial when the page loads
-function init() {
-
-
-  box = {
-    box1: "❓",
-    box2: "❓",
-    box3: "❓",
-  };
-
-  render();
+    render();
+  }
 }
