@@ -1,13 +1,10 @@
 // An Array of emojis that will be used for the slot machine game
 const items = ["🍭", "😻", "💵"];
 
-let emojis;
-let box;
-
-// Cache Elements, gotPotsEls is my object and potOfGold1/2/3 are my keys
-// These are the elements that will update on my HTML
 const play = document.getElementById("start");
+
 const init = document.getElementById("init");
+
 const boxesEls = {
   box1: document.querySelector("#box1"),
   box2: document.querySelector("#box2"),
