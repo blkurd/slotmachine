@@ -2,14 +2,14 @@
 const items = ["🍭", "😻", "💵"];
 
 let emojis;
-let potOfGold;
+let box;
 
 // Cache Elements, gotPotsEls is my object and potOfGold1/2/3 are my keys
 // These are the elements that will update on my HTML
-const goldPotsEls = {
-  potOfGold1: document.querySelector("#potOfGold1"),
-  potOfGold2: document.querySelector("#potOfGold2"),
-  potOfGold3: document.querySelector("#potOfGold3"),
+const boxesEls = {
+  box1: document.querySelector("#box1"),
+  box2: document.querySelector("#box2"),
+  box3: document.querySelector("#box3"),
 };
 
 //    This the function that will randomly choose 3 items from the items array to
@@ -32,14 +32,14 @@ restartButton.addEventListener("click", init);
 // will show if someone wins/loses
 
 function playSlot(e) {
-  potOfGold.potOfGold1 = getRandomItems();
-  potOfGold.potOfGold2 = getRandomItems();
-  potOfGold.potOfGold3 = getRandomItems();
+  box.box1 = getRandomItems();
+  box.box2 = getRandomItems();
+  box.box3 = getRandomItems();
 
   if (
-    potOfGold.potOfGold1 === potOfGold.potOfGold2 &&
-    potOfGold.potOfGold3 === potOfGold.potOfGold1 &&
-    potOfGold.potOfGold2 === potOfGold.potOfGold3
+    box.box1 === box.box2 &&
+    box.box3 === box.box1 &&
+    box.box2 === box.box3
 
   ) { 
 
@@ -53,11 +53,11 @@ init(); // this will set the initial when the page loads
 function init() {
 
 
-  potOfGold = {
-    potOfGold1: "❓",
-    potOfGold2: "❓",
-    potOfGold3: "❓",
+  box = {
+    box1: "❓",
+    box2: "❓",
+    box3: "❓",
   };
 
   render();
-}}
+}
