@@ -1,5 +1,73 @@
-// An Array of emojis that will be used for the slot machine game
-const emojis = ["🍭", "😻", "💵"];
+let boxes;
+let wins;
+let loses;
+// Cashed Elements which I am going to update repeatedly when the state changes.
+
+const buttonOne = document.querySelector("#start");
+buttonOne.addEventListener("click", playSlot);
+
+function playSlot(eo) {
+  // console.log("Here I am clicking");
+
+  boxes.boxOne = getRandomEmojis();
+  boxes.boxTwo = getRandomEmojis();
+  boxes.boxThree = getRandomEmojis();
+
+  if (
+    boxes.boxOne === boxes.boxTwo &&
+    boxes.boxThree === boxes.boxOne &&
+    boxes.boxTwo === boxes.boxThree
+  ) {
+    wins.win += 1200;
+  } else {
+    loses.lose -= 50;
+  }
+
+  // In this function I want to randomly generate a result of emojis. I will write
+  // a function below to help me do this.
+
+  render();
+}
+
+// This function's task is to randomly return the emojis
+// in the following array = ["🍭", "😻", "💵"]
+
+function getRandomEmojis() {
+  const emojis = ["🍭", "😻", "💵"];
+  const randomIndex = Math.floor(Math.random() * (2 - 0 + 1)) + 0;
+  return emojis[randomIndex];
+}
+
+const buttonTwo = document.querySelector("#restart");
+buttonTwo.addEventListener("click", restart);
+
+function restart(e) {
+  // console.log("Here I am clickin too");
+
+  boxes.boxOne = init();
+  boxes.boxTwo = init();
+  boxes.boxThree = init();
+  wins.win = init();
+  loses.lose = init();
+
+  render();
+}
+
+const boxEls = {
+  boxOne: document.querySelector("#box1"),
+  boxTwo: document.querySelector("#box2"),
+  boxThree: document.querySelector("#box3"),
+};
+
+const h2El = {
+  wins: document.querySelector("#win"),
+};
+
+const h3El = {
+  loses: document.querySelector("#lose"),
+};
+
+// This is the function that will be called when a user reloads the page or restats the game.
 
 // One way to define variables
 
@@ -17,68 +85,6 @@ const emojis = ["🍭", "😻", "💵"];
 
 // I am using the object way of writing it and stating the values inside the function.
 
-let boxes;
-let wins;
-
-// Cashed Elements which I am going to update repeatedly when the state changes.
-
-const buttonOne = document.querySelector("#start");
-buttonOne.addEventListener("click", playSlot);
-
-function playSlot(e) {
-
-  console.log('Here I am clicking')
-
-// In this function I want to randomly generate a result of emojis. I will write
-// a function below to help me do this. 
-
-
-
-
-
-  render();
-}
-
-
-// This function's task is to randomly return the emojis 
-// in the following array = ["🍭", "😻", "💵"]
-
-function getRandomEmojis(){
-
-
-
-
-
-};
-
-
-
-
-const buttonTwo = document.querySelector("#restart");
-buttonTwo.addEventListener("click", restart);
-
-function restart(e) {
-
-  console.log('Here I am clickin too')
-
-  render();
-}
-
-
-
-
-const boxEls = {
-  boxOne: document.querySelector("#box1"),
-  boxTwo: document.querySelector("#box2"),
-  boxThree: document.querySelector("#box3"),
-};
-
-const h2El = {
-  wins: document.querySelector("#win"),
-};
-
-// This is the function that will be called when a user reloads the page or restats the game.
-
 function init() {
   boxes = {
     boxOne: "❓",
@@ -87,7 +93,11 @@ function init() {
   };
 
   wins = {
-    win: "You Win: " + 0,
+    win: 0,
+  };
+
+  loses = {
+    lose: 0,
   };
 
   render();
@@ -119,4 +129,5 @@ function render() {
   // This is th h2 element's written alone because it has a different naming.
 
   h2El.wins.innerText = wins.win;
+  h3El.loses.innerText = loses.lose;
 }
